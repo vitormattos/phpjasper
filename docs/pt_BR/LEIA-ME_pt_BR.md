@@ -1,3 +1,5 @@
+![PHPJasper logo](../images/phpjasper.png)
+
 # PHPJasper
 
 _Gerador de relatórios PHP_
@@ -5,6 +7,7 @@ _Gerador de relatórios PHP_
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/geekcom/phpjasper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/geekcom/phpjasper/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/geekcom/phpjasper/v/stable)](https://packagist.org/packages/geekcom/phpjasper)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.0-blue.svg?style=flat-square)](https://php.net/)
+[![Total Downloads](https://poser.pugx.org/geekcom/phpjasper/downloads)](https://packagist.org/packages/geekcom/phpjasper)
 [![License](https://poser.pugx.org/geekcom/phpjasper/license)](https://packagist.org/packages/geekcom/phpjasper) 
 
 ### Documentação
@@ -30,7 +33,7 @@ Apresento para vocês **JasperReports** a melhor solução open source que exist
 
 **Texto extraido do site JasperSoft:**
 
-> A biblioteca JasperReports é o mecanismo de geração de relatórios de código aberto mais popular do mundo. É inteiramente escrito em Java e é capaz de usar dados provenientes de qualquer tipo de fonte de dados e gerar documentos perfeitos que podem ser visualizado, impressom ou exportadom em uma variedade de formatos de documentos, incluindo HTML, PDF, Excel, OpenOffice e Word .
+> A biblioteca JasperReports é o mecanismo de geração de relatórios de código aberto mais popular do mundo. É inteiramente escrito em Java e é capaz de usar dados provenientes de qualquer tipo de fonte de dados e gerar documentos perfeitos que podem ser visualizado, impresso ou exportado em uma variedade de formatos de documentos, incluindo HTML, PDF, Excel, OpenOffice e Word .
 
 *Exemplos do que você pode fazer:*
 
@@ -51,33 +54,6 @@ Apresento para vocês **JasperReports** a melhor solução open source que exist
 * [Microsoft JDBC Drivers](https://www.microsoft.com/en-US/download/details.aspx?id=11774) (se você pretende usar esse tipo de banco de dados)
 * [Jaspersoft Studio](http://community.jaspersoft.com/project/jaspersoft-studio) (para escrever e compilar seus relatórios)
 
-### Instalando o Java(JDK)
-
-Verifique se o JDK está instalado:
-
-```
-$ javac -version
-javac version 1.8.0_101
-```
-
-Se você receber a resposta:
-
-    command not found: javac
-
-Então você precisa instalar, para o (Ubuntu/Debian) rode o comando:
-
-    $ sudo apt-get install default-jdk
-
-Para instalar no (centOS/Fedora) faça o seguinte:
-
-    # yum install java-1.8.0-openjdk.x86_64
-
-Para instalar no Windows visite o link-> [JDK](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html) e veja qual a versão mais apropriada para o seu Sistema Operacional.
-
-Agora rode novamente o comando `javac -version` e veja se deu tudo certo.
-
----------------------------------------------------------------------------------------------------------------------------
-
 ## Instalando a biblioteca PHPJasper
 
 Instale o [Composer](http://getcomposer.org), e rode o comando:
@@ -91,7 +67,7 @@ Ou crie um arquivo 'composer.json' e adicione o trecho:
 ```json
 {
     "require": {
-        "geekcom/phpjasper": "^2.1"
+        "geekcom/phpjasper": "^3.0.0"
     }
 }
 ```
@@ -101,6 +77,23 @@ E execute o comando:
     composer install
 
 é isso, você tem a biblioteca instalada e pronta para uso.
+
+----------------------------------------------------------------------------------------------------------------------------
+## PHPJasper com Docker
+
+Com o Docker CE e o docker-compose instalados basta executar os comandos:
+
+* `docker-compose up -d`
+* `docker exec -it phpjasper composer install`
+
+Para rodar os testes dentro do container execute:
+
+* `docker exec -it phpjasper ./vendor/bin/phpunit` ou
+* `docker exec -it phpjasper ./vendor/bin/phpunit --testdox`
+
+Para ver o coverage basta executar o arquivo: `/tests/codeCoverage/html/dashboard.html`
+
+_Ajude-nos escrevendo novos testes, faça um fork_ :)
 
 ----------------------------------------------------------------------------------------------------------------------------
 

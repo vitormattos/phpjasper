@@ -5,7 +5,7 @@
  *
  * (c) Daniel Rodrigues (geekcom)
  *
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -129,7 +129,7 @@ class PHPJasper
                 'jdbc_driver' => '--db-driver',
                 'jdbc_url' => '--db-url',
                 'jdbc_dir' => '--jdbc-dir',
-                'db_sid' => '-db-sid',
+                'db_sid' => '--db-sid',
                 'xml_xpath' => '--xml-xpath',
                 'data_file' => '--data-file',
                 'json_query' => '--json-query'
@@ -138,10 +138,10 @@ class PHPJasper
             foreach ($options['db_connection'] as $key => $value) {
                 $this->command .= " {$mapDbParams[$key]} {$value}";
             }
+        }
 
-            if ($options['resources']) {
-                $this->command .= " -r {$options['resources']}";
-            }
+        if ($options['resources']) {
+            $this->command .= " -r {$options['resources']}";
         }
 
         return $this;
